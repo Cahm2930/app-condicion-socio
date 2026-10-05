@@ -591,9 +591,19 @@
   {
     display: none;
   }
+  .altura
+  {
+    display: none;
+    height: 20px;
+  }
  
     @media (max-width: 576px) 
     {
+
+        .altura
+  {
+    display: initial;
+  }
 
     .web
   {
