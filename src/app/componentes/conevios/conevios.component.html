@@ -1,0 +1,314 @@
+
+<div style=" display: flex;flex-direction: column; background-color: white;">
+<!--
+<div style="background: linear-gradient(45deg,#00467D,#618daf,#00467D,#4ca977,#00662F);color: white;text-align: center;padding: 12px;"> 
+    
+COOPERATIVA DE AHORRO Y CREDITO LEON XIII </div>
+-->
+
+<div class="container" style="padding: 8px 0px 8px 0px;display: flex;" >
+    <img src="/imagenes/logoLeon.png" style="height: 55px;width: 85px; margin: 0px 20px 0px 20px; ">
+   
+    <div style="text-align: center;font-weight: 500;font-size: 20px;color: #00467D;flex: 1;"></div>
+
+    
+    
+     <div style="color: #006232;display: flex; align-items: center;justify-content: center; margin: 0px 20px 0px 20px;" >
+      <div style="display:flex;align-items: center;justify-content: center;height: 40px;">
+        <i class="bi bi-geo-alt" style="font-size: 24px;cursor: pointer;"
+          (click)="ubicanos()"></i>
+        <div style="width: 10px;"></div>
+        <i class="bi bi-facebook" style="font-size: 24px;cursor: pointer;"
+          (click)="facebook()"></i>
+        <div style="width: 10px;"></div>
+        <i class="bi bi-instagram" style="font-size: 24px;cursor: pointer;"
+          (click)="instagram()"></i>
+         
+      </div>
+       <div style="height: 20px;"></div>
+    </div>
+</div>
+
+
+<div class="fondo" >
+    <div class="container"  >
+
+         <div class="row" >
+        <div class="col-sm-12 col-md-6" style="padding: 20px; display: flex;
+       justify-content: center;
+       align-items: center;">
+            <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                <span class="titulo-part1">¿CUÁL ES LA <span class="titulo-part2"> CONDICIÓN </span> DEL SOCIO? </span>
+                <div style="height: 8px;"></div>
+                 <span style="color: rgb(245, 244, 244);">Consulta en tiempo real si el portador del DNI o CE es socio con descuento y pueda acceder al descuento exclusivo de tu establecimiento aliado.</span>
+                 <div style="height: 22px;"></div>
+                 <div class="container" >
+                 <div class="row">
+                 <div class="col">
+                     <div style="display: flex;flex-direction: column;color: white;justify-content: center;align-items: center;">
+                        <span class="titulo-detalle" >+70.000</span>
+                        <span class="subtitulo-detalle">SOCIOS ACTIVOS</span>
+                    </div>
+                 </div>
+                 <div class="col-1">
+                    <div class="barra" ></div>
+                 </div>
+                <div class="col-3">
+                    <div style="display: flex;flex-direction: column;color: white;justify-content: center;align-items: center;">
+                        <span  class="titulo-detalle">100%</span>
+                        <span class="subtitulo-detalle">SEGURO</span>
+                    </div>
+
+                 </div>
+                 <div class="col-1">
+                    <div class="barra" ></div>
+                 </div>
+                 <div class="col-3">
+                    <div style="display: flex;flex-direction: column;color: white;justify-content: center;align-items: center;">
+                         <span class="titulo-detalle">24h</span>
+                        <span class="subtitulo-detalle">DISPONIBLE</span>
+                    </div>
+
+                 </div>
+                </div>
+                </div>
+                 
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-12 col-md-6" style=" display: flex; padding: 40px 10px 40px 10px;
+       justify-content: center;
+       align-items: center;">
+            <div class="card" >
+                <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 18px;">
+                    <div style="height: 18px;"></div>
+                    <div style="color: #7EB620;font-weight: 600;font-size: 18px;">CONSULTAR SOCIO</div>
+                    <div style="height: 16px;"></div>
+                    <div style="color: gray;max-width: 380px;font-size: 16px;">Ingresa el documento de identidad para verificar la condición del socio.</div>
+                    <div style="height: 18px;"></div>
+                       <div class="formulario-documento" style="max-width: 380px">
+                        <label class="label-documento">
+                            Tipo de documento
+                        </label>
+
+                        <div class="tipos-documento">
+
+                            <button
+                            type="button"
+                            class="tipo-documento"
+                            [class.activo]="tipoDocumento === 'DNI'"
+                            (click)="seleccionarDocumento('DNI')">
+                            DNI
+                            </button>
+
+                            <button
+                            type="button"
+                            class="tipo-documento"
+                            [class.activo]="tipoDocumento === 'CE'"
+                            (click)="seleccionarDocumento('CE')">
+                            Carnet de Extranjería
+                            </button>
+
+                        </div>
+
+
+                        <label class="label-documento">
+                            Número de documento
+                        </label>
+
+                        <input
+                            type="text"
+                            class="input-documento"
+                            [(ngModel)]="numeroDocumento"
+                            [maxlength]="tipoDocumento === 'DNI' ? 8 : 12"
+                            [placeholder]="
+                            tipoDocumento === 'DNI'
+                                ? 'Ingrese su número de DNI'
+                                : 'Ingrese su número de Carnet de Extranjería'
+                            "
+                        />
+
+
+                        <button
+                            type="button"
+                            class="btn-verificar"
+                            (click)="verificarCliente()">
+
+                            <i class="bi bi-search"></i>
+                            Verificar socio
+
+                        </button>
+
+                        </div>
+                </div>
+                
+            </div>
+             
+        </div>
+
+
+    </div>
+      
+    </div>
+   
+
+
+
+</div>
+<div style="height: 50px;"></div>
+
+<section class="seccion-pasos">
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- PASO 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="paso-card">
+
+          <div class="paso-header">
+            <div class="paso-numero">1</div>
+
+            <h3>Selecciona el tipo de documento</h3>
+          </div>
+
+          <p>
+            Elige <strong>DNI</strong> (8 dígitos numéricos) o
+            <strong>Carnet de Extranjería</strong> según el documento
+            que presenta el cliente.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- PASO 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="paso-card">
+
+          <div class="paso-header">
+            <div class="paso-numero">2</div>
+
+            <h3>Ingresa el número</h3>
+          </div>
+
+          <p>
+            Escribe el número del documento y presiona el botón de
+            verificar. La consulta toma menos de 2 segundos.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- PASO 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="paso-card">
+
+          <div class="paso-header">
+            <div class="paso-numero">3</div>
+
+            <h3>Aplica el beneficio</h3>
+          </div>
+
+          <p>
+            Cuando el resultado indique
+            <strong>«Es cliente activo»</strong>, el portador del
+            documento puede acceder al descuento de tu establecimiento.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<div style="height: 40px;"></div>
+<div class="paso-header" style="display: flex; justify-content: center;">
+
+  <h4>Descuento con estas Empresas</h4>
+</div>
+<div style="height: 15px;"></div>
+ <div class="slider"  style="cursor: pointer;">
+            <div class="slide-track">
+              <div class="slide" ><img src="imagenes/logo1.png" alt="" ></div>     
+              <div class="slide" ><img src="imagenes/logo2.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo3.png" alt="" ></div>       
+              <div class="slide" ><img src="imagenes/logo4.png" alt="" ></div>        
+              <div class="slide" ><img src="imagenes/logo5.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo6.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo7.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo8.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo9.png" alt="" ></div>
+              <div class="slide"><img  src="imagenes/logo10.png" alt="" ></div>
+              <div class="slide"><img  src="imagenes/logo11.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo1.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo2.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo3.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo4.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo5.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo6.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo7.png" alt="" ></div>
+              <div class="slide" ><img src="imagenes/logo8.png" alt="" ></div>
+              <div class="slide"><img  src="imagenes/logo9.png" alt="" ></div>
+              <div class="slide"><img  src="imagenes/logo10.png" alt="" ></div>
+              <div class="slide"><img  src="imagenes/logo11.png" alt="" ></div>
+            </div>
+          </div>
+          <div style="height: 20px;"></div>
+          <div style="display: flex;justify-content: center;">
+            <div style="max-width: 600px;color: gray;display: flex;text-align: center;padding: 12px;">Acuerdos y convenios de colaboración con empresas aliadas, que brindan importantes descuentos y tarifas preferenciales exclusivas para nuestros socios.</div>
+
+          </div>
+<div style="height: 100px;"></div>
+<div class="container">
+ <mat-divider class="web-divider"></mat-divider>
+    <div style="height: 20px;"></div>
+    <div class="web">
+        <div style="display: flex; justify-content: space-between; ">
+    <div style="display: flex;flex-direction: column;">
+        <div style="font-weight: 600;">Oficina principal</div>
+        <div style="color: gray;">Jr. San Martín 656 - Trujillo</div>
+
+    </div>
+
+  
+      <div style="color: gray;font-size: 14px;display: grid;place-content: center;padding: 0px 0px 0px 20px;">
+        Cooperativa León XIII ©2026. All Rights Reserved.
+      </div>
+     
+
+  
+
+    <div style="display: flex;flex-direction: column;">
+        <div style="font-weight: 600;">Contáctanos</div>
+        <div style="color: gray;">(044) 481860</div>
+
+    </div>
+    </div>
+</div>
+  <div class="movil">
+        <div style="display: flex; justify-content: space-between; ">
+    <div style="display: flex;flex-direction: column;">
+        <div style="font-weight: 600;font-size: 15px;">Oficina principal</div>
+        <div style="color: gray;font-size: 13px;">Jr. San Martín 656 - Trujillo</div>
+
+    </div>
+
+    <div style="display: flex;flex-direction: column;">
+        <div style="font-weight: 600;font-size: 15px;">Contáctanos</div>
+        <div style="color: gray;font-size: 13px;">(044) 481860</div>
+
+    </div>
+    </div>
+      <div style="height: 20px;"></div>
+     <div style="color: gray;font-size: 14px;display: grid;place-content: center;padding: 0px 0px 0px 20px;">
+        Cooperativa León XIII ©2026. All Rights Reserved.
+      </div>
+
+    </div>
+       <div style="height: 20px;"></div>
+   </div>

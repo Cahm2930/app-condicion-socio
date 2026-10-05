@@ -31,7 +31,11 @@
                 "input": "public"
               }
             ],
-            "styles": [
+           "styles": [
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -98,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "305d74d4-2d56-4276-af09-a1219cb064ce"
   }
 }
